@@ -1,42 +1,26 @@
-import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import { View, StyleSheet, Platform } from "react-native";
-import FlightSearchScreen from "../screens/FlightSearchScreen";
-import AvailableFlightsScreen from "../screens/AvailableFlightsScreen";
 import { getStatusBarHeight } from "react-native-status-bar-height";
-import Ionicons from "@expo/vector-icons/Ionicons";
 
 import colors from "../config/colors";
+import { createStackNavigator } from "@react-navigation/stack";
+import SettingsScreen from "../screens/SettingsScreen";
 
 const StatusBarHeight = getStatusBarHeight();
 
 const Stack = createStackNavigator();
 
-const FlightSearchNavigator = () => (
-  <Stack.Navigator initialRouteName="FlightSearchScreen">
+const SettingsNavigator = () => (
+  <Stack.Navigator initialRouteName="SettingsScreen">
     <Stack.Screen
-      name="FlightSearchScreen"
-      component={FlightSearchScreen}
+      name="SettingsScreen"
+      component={SettingsScreen}
       options={{
-        title: "Search for Flights",
+        title: "Account",
         headerTitleAlign: "center",
         headerStyle: styles.headerStyle,
         headerTitleStyle: styles.headerTitleStyle,
         headerBackTitleVisible: false,
-      }}
-    />
-    <Stack.Screen
-      name="AvailableFlightsScreen"
-      component={AvailableFlightsScreen}
-      options={{
-        title: "Available Flights",
-        headerTitleAlign: "center",
-        headerStyle: styles.headerStyle,
-        headerTitleStyle: styles.headerTitleStyle,
-        headerBackTitleVisible: false,
-        headerBackImage: () => (
-          <Ionicons name="chevron-back" size={23} color={colors.tertiary} />
-        ),
       }}
     />
   </Stack.Navigator>
@@ -68,4 +52,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FlightSearchNavigator;
+export default SettingsNavigator;

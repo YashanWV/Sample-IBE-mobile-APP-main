@@ -200,10 +200,6 @@ function RegiterScreen({ navigation }) {
   };
 
   return (
-
-
-
-
     <AppForm
       initialValues={{
         username: "",
@@ -223,13 +219,14 @@ function RegiterScreen({ navigation }) {
         const { confirmPassword, ...userDetails } = values;
         console.log(userDetails);
         loadRegisterUser(userDetails);
-
       }}
       validationSchema={validationSchema}
     >
       <AppBackgroundScrollable>
         <AppBackgroundCardView style={[styles.container1, { marginTop: 20 }]}>
-          <View style={styles.captionView}><AppText style={styles.caption}>Account Details</AppText></View>
+          <View style={styles.captionView}>
+            <AppText style={styles.caption}>Account Details</AppText>
+          </View>
           <ListItemSeperator />
           <AppFormField
             autoCapitalize="none"
@@ -271,7 +268,9 @@ function RegiterScreen({ navigation }) {
         </AppBackgroundCardView>
 
         <AppBackgroundCardView style={styles.container1}>
-          <View style={styles.captionView}><AppText style={styles.caption}>Private Details</AppText></View>
+          <View style={styles.captionView}>
+            <AppText style={styles.caption}>Private Details</AppText>
+          </View>
           <ListItemSeperator />
           <View style={{ flexDirection: "row", marginTop: 20 }}>
             <View style={{ flex: 1, marginRight: 5, width: "50%" }}>
@@ -307,7 +306,6 @@ function RegiterScreen({ navigation }) {
                 marginBottom={18}
                 iconSize={0.5}
                 iconColor={colors.white}
-
               />
             </View>
             <View style={{ flex: 1, marginLeft: 5, width: "50%" }}>
@@ -346,7 +344,9 @@ function RegiterScreen({ navigation }) {
         </AppBackgroundCardView>
 
         <AppBackgroundCardView style={styles.container1}>
-          <View style={styles.captionView}><AppText style={styles.caption}>Contact Details</AppText></View>
+          <View style={styles.captionView}>
+            <AppText style={styles.caption}>Contact Details</AppText>
+          </View>
           <ListItemSeperator />
           <AppFormField
             autoCapitalize="none"
@@ -382,16 +382,26 @@ function RegiterScreen({ navigation }) {
         </AppBackgroundCardView>
       </AppBackgroundScrollable>
 
-
       <View style={styles.submit}>
-        <AppText style={{ color: colors.formalerts, textAlign: 'center', marginBottom: 4, }}>By submitting, you agree to our Terms and Conditions and Privacy Policy.</AppText>
+        <AppText
+          style={{
+            color: colors.formalerts,
+            textAlign: "center",
+            marginBottom: 4,
+          }}
+        >
+          By submitting, you agree to our Terms and Conditions and Privacy
+          Policy.
+        </AppText>
         <ListItemSeperator />
-        <SubmitButton title="REGISTER" color="secondary" marginBottom={10} marginTop={10} />
+        <SubmitButton
+          title="REGISTER"
+          color="secondary"
+          marginBottom={20}
+          marginTop={10}
+        />
       </View>
     </AppForm>
-
-
-
   );
 }
 
@@ -427,7 +437,12 @@ const styles = StyleSheet.create({
     paddingRight: 18,
     marginBottom: 15,
   },
-  captionView: { justifyContent: 'flex-start', alignItems: 'flex-start', width: '100%', paddingLeft: 5 },
+  captionView: {
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    width: "100%",
+    paddingLeft: 5,
+  },
   caption: {
     marginTop: 10,
     marginBottom: 8,
@@ -436,11 +451,12 @@ const styles = StyleSheet.create({
     color: colors.secondary,
   },
   submit: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
     paddingHorizontal: 20,
     paddingTop: 8,
+    //marginBottom: 15,
     backgroundColor: colors.white,
     shadowOpacity: 0.05,
     shadowOffset: {
@@ -450,8 +466,8 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
     elevation: 1,
     borderTopWidth: 0.19,
-    borderTopColor: colors.listseperators
-  }
+    borderTopColor: colors.listseperators,
+  },
 });
 
 export default RegiterScreen;

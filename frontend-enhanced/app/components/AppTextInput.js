@@ -10,6 +10,8 @@ function AppTextInput({
   iconSize,
   borderColor = colors.primary2,
   backgroundColor = colors.bluegrey,
+  placeholderColor = colors.placeholder,
+  textColor = colors.primary3,
   ...otherProps
 }) {
   return (
@@ -31,12 +33,12 @@ function AppTextInput({
         />
       )}
       <TextInput
-        placeholderTextColor={colors.placeholder}
+        placeholderTextColor={placeholderColor}
         style={{
           fontFamily: Platform.OS === "android" ? "Roboto" : "Inter",
           fontSize: 15,
           fontWeight: "500",
-          color: colors.primary3,
+          color: textColor,
           width: "100%",
           marginLeft: 8,
         }}

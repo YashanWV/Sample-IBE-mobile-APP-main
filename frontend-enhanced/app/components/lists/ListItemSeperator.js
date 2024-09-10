@@ -1,21 +1,19 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import colors from '../../config/colors';
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import colors from "../../config/colors";
 
-function ListItemSeperator() {
-    return (
-        <View style={styles.container} />
-    )
+function ListItemSeperator({ height = 1, color = colors.listseperators }) {
+  return (
+    <View style={[styles.container, { height }, { backgroundColor: color }]} />
+  );
 }
 
 const styles = StyleSheet.create({
-    container: {
+  container: {
+    width: "100%",
 
-        width: '100%',
-
-        height: 1,
-        backgroundColor: colors.listseperators
-    }
-})
+    marginHorizontal: -30,
+  },
+});
 
 export default ListItemSeperator;

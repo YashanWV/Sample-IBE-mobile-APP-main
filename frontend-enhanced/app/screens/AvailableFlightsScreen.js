@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 import colors from "../config/colors";
 import AppBackground from "../components/AppBackground";
 import AppBackgroundCardView from "../components/cards/AppBackgroundCardView";
 import flightSearch from "../apis/flightSearch";
+import AppBackgroundScrollable from "../components/AppBackgroundScrollable";
+import DetailsCard from "../components/cards/DetailsCard";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+
+import { AppText } from "../components";
 
 // const availablelights = [
 //   {
@@ -51,36 +56,118 @@ function AvailableFlightsScreen({ route }) {
   console.log(availableFlights);
 
   return (
-    <AppBackground>
+    <AppBackgroundScrollable style={{ paddingTop: 20 }}>
       {availableFlights &&
         availableFlights.map((flight, index) => (
-          <AppBackgroundCardView key={index} style={styles.container}>
-            <Text>
-              {flight.departureAirport.airportName} to {flight.arrivalAirport.airportName}
-            </Text>
-            <Text>
-              {flight.departureDate} {flight.departureTime} to{" "}
-              {flight.arrivalDate} {flight.arrivalTime}
-            </Text>
-          </AppBackgroundCardView>
+          <DetailsCard
+            key={index}
+            icon={"airplane"}
+            title={flight.flightDesignator}
+            headerColor={colors.secondary}
+          >
+            <View style={styles.container}>
+              <View
+                style={{
+                  width: "50%",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  paddingHorizontal: 10,
+                }}
+              >
+                <FontAwesome5
+                  name="plane-departure"
+                  size={20}
+                  color={colors.black}
+                />
+                <AppText
+                  style={{
+                    fontSize: 15,
+                    fontWeight: "700",
+                    color: colors.formalerts,
+                    textAlign: "center",
+                  }}
+                >
+                  {`${flight.departureAirport.airportName} : ${flight.departureAirport.country.countryName}`}
+                </AppText>
+                <AppText
+                  style={{
+                    fontSize: 15,
+                    color: colors.tertiary,
+                    textAlign: "center",
+                  }}
+                >
+                  ON: {flight.departureDate}
+                </AppText>
+                <AppText
+                  style={{
+                    fontSize: 15,
+                    color: colors.tertiary,
+                    textAlign: "center",
+                  }}
+                >
+                  AT: {flight.departureTime}
+                </AppText>
+              </View>
+
+              <View
+                style={{
+                  width: "50%",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  paddingHorizontal: 10,
+                }}
+              >
+                <FontAwesome5
+                  name="plane-arrival"
+                  size={20}
+                  color={colors.black}
+                />
+                <AppText
+                  style={{
+                    fontSize: 15,
+                    fontWeight: "700",
+                    color: colors.formalerts,
+                    textAlign: "center",
+                  }}
+                >
+                  {`${flight.arrivalAirport.airportName} : ${flight.arrivalAirport.country.countryName}`}
+                </AppText>
+                <AppText
+                  style={{
+                    fontSize: 15,
+                    color: colors.tertiary,
+                    textAlign: "center",
+                  }}
+                >
+                  ON: {flight.arrivalDate}
+                </AppText>
+                <AppText
+                  style={{
+                    fontSize: 15,
+                    color: colors.tertiary,
+                    textAlign: "center",
+                  }}
+                >
+                  AT: {flight.arrivalTime}
+                </AppText>
+              </View>
+            </View>
+          </DetailsCard>
         ))}
-    </AppBackground>
+    </AppBackgroundScrollable>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.white,
-    borderRadius: 20,
-    shadowOpacity: 0.3,
-    shadowOffset: {
-      width: 2,
-      height: 2,
-    },
-    shadowRadius: 7,
-    elevation: 3,
-    paddingLeft: 20,
-    paddingRight: 20,
+    width: "100%",
+    flexDirection: "row",
+    marginBottom: 15,
+    backgroundColor: colors.listseperators,
+    paddingTop: 8,
+    paddingBottom: 10,
+    borderBottomEndRadius: 20,
+    borderBottomStartRadius: 20,
   },
 });
 

@@ -13,6 +13,7 @@ export default {
   bluegrey: "#f6feff",
   bluegrey1: "#caf0f8",
   bluegrey2: "#ade8f4",
+  bluegrey3: "#f6fbff",
   invisible: "#00000000",
   bluebackground1: "#90e0ef",
   bluebackground2: "#48cae4",

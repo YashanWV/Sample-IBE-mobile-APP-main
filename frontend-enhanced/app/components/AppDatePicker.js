@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { View, Button, Platform, StyleSheet } from "react-native";
-import DateTimePicker from "@react-native-community/datetimepicker";
+import { View, StyleSheet } from "react-native";
 import { useFormikContext } from "formik";
 import AppText from "./AppText";
 import colors from "../config/colors";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import AppIcon from "./AppIcon";
+import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 function AppDatePicker({
   name,
@@ -20,20 +20,20 @@ function AppDatePicker({
   backgroundColor = colors.bluegrey,
   borderColor = colors.primary2,
   placeholderColor = colors.placeholder,
-  textColor = colors.primary3
+  textColor = colors.primary3,
 }) {
   const { setFieldValue, values } = useFormikContext();
   const [date, setDate] = useState(new Date());
   const [show, setShow] = useState(false);
 
-  const onChange = (event, selectedDate) => {
-    const currentDate = selectedDate || date;
-    setShow(Platform.OS === "ios");
-    setDate(currentDate);
+  const handleConfirm = (selectedDate) => {
+    setShow(false);
+    setDate(selectedDate);
 
     // Adjusting for timezone offset
     const adjustedDate = new Date(
-      currentDate.getTime() + Math.abs(currentDate.getTimezoneOffset() * 60000)
+      selectedDate.getTime() +
+        Math.abs(selectedDate.getTimezoneOffset() * 60000)
     );
 
     // Formatting the date to 'YYYY-MM-DD'
@@ -73,7 +73,6 @@ function AppDatePicker({
         >
           {values[name] ? values[name] : placeholder}
         </AppText>
-        {/* <Button onPress={() => setShow(true)} title="Select Date" /> */}
         {icon2 ? (
           <AppIcon
             name={icon2}
@@ -91,15 +90,14 @@ function AppDatePicker({
           </View>
         )}
       </View>
-      {show && (
-        <DateTimePicker
-          testID="dateTimePicker"
-          value={date}
-          mode="date"
-          display="default"
-          onChange={onChange}
-        />
-      )}
+      <DateTimePickerModal
+        isVisible={show}
+        mode="date"
+        date={date}
+        onConfirm={handleConfirm}
+        onCancel={() => setShow(false)}
+        display="inline"
+      />
     </TouchableWithoutFeedback>
   );
 }
@@ -138,7 +136,8 @@ const styles = StyleSheet.create({
     height: 24,
     width: 24,
     borderRadius: 12,
-
+    position: "absolute",
+    right: 0,
   },
 });
 

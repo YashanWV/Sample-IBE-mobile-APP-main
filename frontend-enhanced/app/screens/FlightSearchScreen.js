@@ -19,7 +19,9 @@ import {
 import flightSearch from "../apis/flightSearch";
 import masterData from "../apis/masterData";
 import { ListItemSeperator } from "../components/lists";
-import Ionicons from '@expo/vector-icons/Ionicons';
+import Ionicons from "@expo/vector-icons/Ionicons";
+import NumericInput from "../components/NumericInput";
+import AppBackgroundScrollable from "../components/AppBackgroundScrollable";
 
 const validationSchema = Yup.object().shape({
   numberOfSeats: Yup.number("Number of Tickets must be a number !")
@@ -27,6 +29,9 @@ const validationSchema = Yup.object().shape({
     .min(1, "Number of Tickets must be at least 1 !")
     .max(10, "Number of Tickets must be at most 10 !")
     .label("Number of Tickets"),
+  // numberOfSeats1: Yup.number("Must be a number").min(0).required(),
+  // numberOfSeats2: Yup.number("Must be a number").min(0).required(),
+  // numberOfSeats3: Yup.number("Must be a number").min(0).required(),
 });
 
 const StatusBarHeight = getStatusBarHeight();
@@ -39,6 +44,7 @@ const bookingClasses = [
 
 function FlightSearchScreen({ navigation }) {
   const [airports, setAirports] = useState([]);
+  //const { values, setFieldValue } = useFormikContext();
 
   useEffect(() => {
     loadMasterData();
@@ -57,9 +63,20 @@ function FlightSearchScreen({ navigation }) {
     console.log(response.data.Airports);
   };
 
-  return (
-    <AppBackground>
+  // const handleNumericInputChange = (index, value, setFieldValue) => {
+  //   setFieldValue(`numberOfSeats${index}`, value);
+  // };
 
+  // const calculateTotalSeats = (values) => {
+  //   return (
+  //     (values.numberOfSeats1 ? values.numberOfSeats1 : 0) +
+  //     (values.numberOfSeats2 ? values.numberOfSeats2 : 0) +
+  //     (values.numberOfSeats3 ? values.numberOfSeats3 : 0)
+  //   );
+  // };
+
+  return (
+    <AppBackgroundScrollable>
       <AppForm
         initialValues={{
           departureAirportCode: "",
@@ -67,15 +84,23 @@ function FlightSearchScreen({ navigation }) {
           departureDate: "",
           bookingClass: "",
           numberOfSeats: "",
+          // numberOfSeats1: 0,
+          // numberOfSeats2: 0,
+          // numberOfSeats3: 0,
         }}
         onSubmit={(values) => {
-          navigation.navigate("AvailableFlightsScreen", { params: values });
+          //const seats = calculateTotalSeats(values);
+          navigation.navigate("AvailableFlightsScreen", {
+            params: values,
+          });
           console.log(values);
         }}
         validationSchema={validationSchema}
       >
-        <AppBackgroundCardView style={[styles.container, { marginTop: 20 }]} >
-          <View style={styles.captionView}><AppText style={styles.caption}>Departure & Arrival Airports</AppText></View>
+        <AppBackgroundCardView style={[styles.container, { marginTop: 20 }]}>
+          <View style={styles.captionView}>
+            <AppText style={styles.caption}>Departure & Arrival</AppText>
+          </View>
           <ListItemSeperator />
 
           <View style={{ flexDirection: "row", marginTop: 20 }}>
@@ -115,19 +140,60 @@ function FlightSearchScreen({ navigation }) {
             </View>
           </View>
 
-          <View style={{ width: "100%", flexDirection: "row", marginBottom: 15 }}>
-            <View style={{ width: "40%", justifyContent: "center" }} >
-              <AppText style={{ color: colors.secondary, fontSize: 15, fontWeight: "bold", textAlign: "center" }} >From</AppText>
-              <SelectedAirport airportKey="departureAirportCode" airports={airports} />
+          <View
+            style={{ width: "100%", flexDirection: "row", marginBottom: 15 }}
+          >
+            <View style={{ width: "40%", justifyContent: "center" }}>
+              <AppText
+                style={{
+                  color: colors.secondary,
+                  fontSize: 15,
+                  fontWeight: "bold",
+                  textAlign: "center",
+                }}
+              >
+                From
+              </AppText>
+              <SelectedAirport
+                airportKey="departureAirportCode"
+                airports={airports}
+              />
             </View>
 
-            <View style={{ width: "20%", justifyContent: "center", alignItems: "center" }} >
-              <Ionicons name="airplane-sharp" size={35} color={colors.primary3} />
+            <View
+              style={{
+                width: "20%",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Ionicons
+                name="airplane-sharp"
+                size={35}
+                color={colors.primary3}
+              />
             </View>
 
-            <View style={{ width: "40%", alignItems: "center", position: "absolute", right: 0 }} >
-              <AppText style={{ color: colors.secondary, fontSize: 15, fontWeight: "bold", textAlign: "center" }} >To</AppText>
-              <SelectedAirport airportKey="arrivalAirportCode" airports={airports} />
+            <View
+              style={{
+                width: "40%",
+                alignItems: "center",
+              }}
+            >
+              <AppText
+                style={{
+                  color: colors.secondary,
+                  fontSize: 15,
+                  fontWeight: "bold",
+                  textAlign: "center",
+                }}
+              >
+                To
+              </AppText>
+              <SelectedAirport
+                airportKey="arrivalAirportCode"
+                airports={airports}
+              />
             </View>
           </View>
 
@@ -140,14 +206,11 @@ function FlightSearchScreen({ navigation }) {
             icon="calendar-day"
             iconSize={0.5}
             marginBottom={2}
-            borderColor={colors.lightgrey1}
-            backgroundColor={colors.lightgrey}
-            placeholderColor={colors.lightgrey2}
-            textColor={colors.formalerts}
+            borderColor={colors.secondary}
+            backgroundColor={colors.bluegrey3}
+            placeholderColor={colors.primary3}
+            textColor={colors.tertiary}
           />
-
-
-
         </AppBackgroundCardView>
         {/* <AppFormPicker
             name="departureDate"
@@ -159,32 +222,66 @@ function FlightSearchScreen({ navigation }) {
             iconColor={colors.white}
           /> */}
 
+        <AppBackgroundCardView style={styles.container}>
+          <View style={styles.captionView}>
+            <AppText style={styles.caption}>Passengers</AppText>
+          </View>
+          <ListItemSeperator />
+          <AppFormPicker
+            name="bookingClass"
+            icon="book-open"
+            items={bookingClasses}
+            placeholder="Booking Class"
+            marginBottom={18}
+            marginTop={20}
+            iconSize={0.5}
+            iconColor={colors.white}
+            borderColor={colors.secondary}
+            backgroundColor={colors.bluegrey3}
+            placeholderColor={colors.primary3}
+            textColor={colors.tertiary}
+          />
 
+          <AppFormField
+            autoCapitalize="none"
+            autoCorrect={false}
+            icon="ticket-alt"
+            iconSize={0.5}
+            name="numberOfSeats"
+            placeholder="Number of Tickets"
+            padding={18}
+            borderColor={colors.secondary}
+            backgroundColor={colors.bluegrey3}
+            placeholderColor={colors.primary3}
+            textColor={colors.tertiary}
+          />
+        </AppBackgroundCardView>
 
-        <AppFormPicker
-          name="bookingClass"
-          icon="book-open"
-          items={bookingClasses}
-          placeholder="Booking Class"
-          marginBottom={18}
-          iconSize={0.5}
-          iconColor={colors.white}
+        {/* <View style={{ marginTop: 20 }}>
+          <AppText style={styles.caption}>Number of Tickets</AppText>
+          <NumericInput
+            //value={values.numberOfSeats1}
+            value={1}
+            onChange={() => handleNumericInputChange(1, 1, setFieldValue)}
+          />
+          <NumericInput
+            //value={values.numberOfSeats2}
+            value={0}
+            onChange={() => handleNumericInputChange(2, 0, setFieldValue)}
+          />
+          <NumericInput
+            value={0}
+            //value={values.numberOfSeats3}
+            onChange={() => handleNumericInputChange(3, 0, setFieldValue)}
+          />
+        </View> */}
+        <SubmitButton
+          title="SEARCH FLIGHTS"
+          color="secondary"
+          marginBottom={10}
         />
-
-        <AppFormField
-          autoCapitalize="none"
-          autoCorrect={false}
-          icon="ticket-alt"
-          iconSize={0.5}
-          name="numberOfSeats"
-          placeholder="Number of Tickets"
-          marginBottom={18}
-          padding={18}
-        />
-        <SubmitButton title="SEARCH" color="secondary" marginBottom={35} />
       </AppForm>
-
-    </AppBackground>
+    </AppBackgroundScrollable>
   );
 }
 
@@ -193,16 +290,16 @@ function SelectedAirport({ airportKey, airports }) {
   const { values } = useFormikContext();
 
   // Find the selected airport based on the value
-  const selectedAirport = airports.find((airport) => airport.value === values[airportKey]);
+  const selectedAirport = airports.find(
+    (airport) => airport.value === values[airportKey]
+  );
 
   if (!selectedAirport) return null; // If nothing is selected, don't show anything
 
   return (
-
     <AppText style={styles.selectedAirportText}>
       {selectedAirport.label}
     </AppText>
-
   );
 }
 
@@ -220,7 +317,7 @@ const styles = StyleSheet.create({
     paddingLeft: 18,
     paddingRight: 18,
     marginBottom: 15,
-    paddingBottom: 20
+    paddingBottom: 20,
   },
   caption: {
     marginTop: 10,
@@ -229,13 +326,18 @@ const styles = StyleSheet.create({
     fontWeight: "semibold",
     color: colors.secondary,
   },
-  captionView: { justifyContent: 'flex-start', alignItems: 'flex-start', width: '100%', paddingLeft: 5 },
+  captionView: {
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    width: "100%",
+    paddingLeft: 5,
+  },
   selectedAirportText: {
     color: colors.tertiary,
     fontSize: 15,
     fontWeight: "semibold",
-    textAlign: "center"
-  }
+    textAlign: "center",
+  },
 });
 
 export default FlightSearchScreen;

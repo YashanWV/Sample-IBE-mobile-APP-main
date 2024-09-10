@@ -21,7 +21,6 @@ import PreviousBookingsScreen from "./app/screens/PreviousBookingsScreen";
 import navigationTheme from "./app/navigation/navigationTheme";
 import AppNavigator from "./app/navigation/AppNavigator";
 
-
 const Stack = createStackNavigator();
 
 export default function App() {
