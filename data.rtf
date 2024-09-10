@@ -1,0 +1,541 @@
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (1, 'JFK', 'John F. Kennedy International Airport', '2024-08-30', '14:30', 'LAX', 'Los Angeles International Airport', '2024-08-30', '17:45', 'AA123', 180);
+
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (2, 'LAX', 'Los Angeles International Airport', '2024-09-01', '10:15', 'ORD', 'O''Hare International Airport', '2024-09-01', '14:30', 'UA456', 200);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (1, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (1, 'Business');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (1, 'First');
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (2, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (2, 'Business');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (2, 'First');
+
+-- Flight 3
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (3, 'ORD', 'OHare International Airport', '2024-09-02', '09:00', 'DFW', 'Dallas/Fort Worth International Airport', '2024-09-02', '11:30', 'AA789', 150);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (3, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (3, 'Premium Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (3, 'Business');
+
+-- Flight 4
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (4, 'JFK', 'John F. Kennedy International Airport', '2024-08-30', '13:45', 'LAX', 'Los Angeles International Airport', '2024-09-03', '15:30', 'DL123', 190);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (4, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (4, 'Business');
+
+-- Flight 5
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (5, 'DEN', 'Denver International Airport', '2024-09-04', '16:00', 'PHX', 'Phoenix Sky Harbor International Airport', '2024-09-04', '17:20', 'UA567', 175);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (5, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (5, 'Business');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (5, 'First');
+
+-- Flight 6
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (6, 'SFO', 'San Francisco International Airport', '2024-09-05', '07:30', 'SEA', 'Seattle-Tacoma International Airport', '2024-09-05', '09:30', 'AS123', 165);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (6, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (6, 'Business');
+
+-- Flight 7
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (7, 'MCO', 'Orlando International Airport', '2024-09-06', '12:00', 'LGA', 'LaGuardia Airport', '2024-09-06', '14:45', 'B6123', 180);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (7, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (7, 'Business');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (7, 'First');
+
+-- Flight 8
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (8, 'LAS', 'McCarran International Airport', '2024-09-07', '14:00', 'SLC', 'Salt Lake City International Airport', '2024-09-07', '15:30', 'DL789', 155);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (8, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (8, 'Premium Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (8, 'Business');
+
+-- Flight 9
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (9, 'BOS', 'Logan International Airport', '2024-09-08', '06:00', 'CLT', 'Charlotte Douglas International Airport', '2024-09-08', '08:30', 'AA456', 200);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (9, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (9, 'Business');
+
+-- Flight 10
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (10, 'DCA', 'Ronald Reagan Washington National Airport', '2024-09-09', '11:00', 'BNA', 'Nashville International Airport', '2024-09-09', '12:45', 'SW123', 175);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (10, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (10, 'Business');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (10, 'First');
+
+-- Flight 11
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (11, 'IAH', 'George Bush Intercontinental Airport', '2024-09-10', '08:00', 'MSY', 'Louis Armstrong New Orleans International Airport', '2024-09-10', '09:30', 'UA345', 160);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (11, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (11, 'Business');
+
+-- Flight 12
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (12, 'SAN', 'San Diego International Airport', '2024-09-11', '15:30', 'LAS', 'McCarran International Airport', '2024-09-11', '16:45', 'AS456', 190);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (12, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (12, 'Business');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (12, 'First');
+
+-- Flight 13
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (13, 'MIA', 'Miami International Airport', '2024-09-12', '18:00', 'ATL', 'Hartsfield-Jackson Atlanta International Airport', '2024-09-12', '20:30', 'DL678', 200);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (13, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (13, 'Business');
+
+-- Flight 14
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (14, 'PHL', 'Philadelphia International Airport', '2024-09-13', '12:00', 'BOS', 'Logan International Airport', '2024-09-13', '13:30', 'AA789', 175);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (14, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (14, 'Business');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (14, 'First');
+
+-- Flight 15
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (15, 'SEA', 'Seattle-Tacoma International Airport', '2024-09-14', '09:30', 'PDX', 'Portland International Airport', '2024-09-14', '10:30', 'AS789', 160);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (15, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (15, 'Business');
+
+-- Flight 16
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (16, 'DFW', 'Dallas/Fort Worth International Airport', '2024-09-15', '14:15', 'ORD', 'OHare International Airport', '2024-09-15', '16:00', 'UA678', 180);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (16, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (16, 'Business');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (16, 'First');
+
+-- Flight 17
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (17, 'JFK', 'John F. Kennedy International Airport', '2024-09-16', '16:30', 'SFO', 'San Francisco International Airport', '2024-09-16', '19:00', 'B6123', 200);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (17, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (17, 'Business');
+
+-- Flight 18
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (18, 'LAX', 'Los Angeles International Airport', '2024-09-17', '09:00', 'MCO', 'Orlando International Airport', '2024-09-17', '15:00', 'AA123', 190);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (18, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (18, 'Business');
+
+-- Flight 19
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (19, 'BNA', 'Nashville International Airport', '2024-09-18', '07:45', 'IAH', 'George Bush Intercontinental Airport', '2024-09-18', '09:30', 'UA567', 165);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (19, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (19, 'Business');
+
+-- Flight 20
+INSERT INTO flight (flight_id, departure_airport_code, departure_airport_name, departure_date, departure_time, arrival_airport_code, arrival_airport_name, arrival_date, arrival_time, flight_designator, number_of_seats) 
+VALUES (20, 'SLC', 'Salt Lake City International Airport', '2024-09-19', '11:30', 'DEN', 'Denver International Airport', '2024-09-19', '14:00', 'DL890', 170);
+
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (20, 'Economy');
+INSERT INTO booking_class (flight_id, booking_classes) VALUES (20, 'Business');
+
+-- Flight 1
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (1, 'Economy', 120);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (1, 'Business', 40);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (1, 'First', 20);
+
+-- Flight 2
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (2, 'Economy', 150);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (2, 'Business', 35);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (2, 'First', 15);
+
+-- Flight 3
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (3, 'Economy', 100);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (3, 'Premium Economy', 30);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (3, 'Business', 20);
+
+-- Flight 4
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (4, 'Economy', 130);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (4, 'Business', 60);
+
+-- Flight 5
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (5, 'Economy', 140);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (5, 'Business', 25);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (5, 'First', 10);
+
+-- Flight 6
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (6, 'Economy', 130);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (6, 'Business', 35);
+
+-- Flight 7
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (7, 'Economy', 150);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (7, 'Business', 20);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (7, 'First', 10);
+
+-- Flight 8
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (8, 'Economy', 120);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (8, 'Premium Economy', 20);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (8, 'Business', 15);
+
+-- Flight 9
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (9, 'Economy', 140);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (9, 'Business', 60);
+
+-- Flight 10
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (10, 'Economy', 150);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (10, 'Business', 20);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (10, 'First', 5);
+
+-- Flight 11
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (11, 'Economy', 120);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (11, 'Business', 40);
+
+-- Flight 12
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (12, 'Economy', 140);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (12, 'Business', 35);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (12, 'First', 15);
+
+-- Flight 13
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (13, 'Economy', 150);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (13, 'Business', 50);
+
+-- Flight 14
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (14, 'Economy', 130);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (14, 'Business', 25);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (14, 'First', 20);
+
+-- Flight 15
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (15, 'Economy', 120);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (15, 'Business', 40);
+
+-- Flight 16
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (16, 'Economy', 140);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (16, 'Business', 30);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (16, 'First', 10);
+
+-- Flight 17
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (17, 'Economy', 150);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (17, 'Business', 50);
+
+-- Flight 18
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (18, 'Economy', 120);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (18, 'Business', 70);
+
+-- Flight 19
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (19, 'Economy', 130);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (19, 'Business', 35);
+
+-- Flight 20
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (20, 'Economy', 120);
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES (20, 'Business', 50);
+
+INSERT INTO Country (country_code, dialing_code, country_name) VALUES
+('AF', '+93', 'Afghanistan'),
+('AL', '+355', 'Albania'),
+('DZ', '+213', 'Algeria'),
+('AS', '+1', 'American Samoa'),
+('AD', '+376', 'Andorra'),
+('AO', '+244', 'Angola'),
+('AI', '+1', 'Anguilla'),
+('AQ', '+672', 'Antarctica'),
+('AG', '+1', 'Antigua and Barbuda'),
+('AR', '+54', 'Argentina'),
+('AM', '+374', 'Armenia'),
+('AW', '+297', 'Aruba'),
+('AU', '+61', 'Australia'),
+('AT', '+43', 'Austria'),
+('AZ', '+994', 'Azerbaijan'),
+('BS', '+1', 'Bahamas'),
+('BH', '+973', 'Bahrain'),
+('BD', '+880', 'Bangladesh'),
+('BB', '+1', 'Barbados'),
+('BY', '+375', 'Belarus'),
+('BE', '+32', 'Belgium'),
+('BZ', '+501', 'Belize'),
+('BJ', '+229', 'Benin'),
+('BM', '+1', 'Bermuda'),
+('BT', '+975', 'Bhutan'),
+('BO', '+591', 'Bolivia'),
+('BQ', '+599', 'Bonaire, Sint Eustatius and Saba'),
+('BA', '+387', 'Bosnia and Herzegovina'),
+('BW', '+267', 'Botswana'),
+('BV', '+55', 'Bouvet Island'),
+('BR', '+55', 'Brazil'),
+('IO', '+246', 'British Indian Ocean Territory'),
+('BN', '+673', 'Brunei Darussalam'),
+('BG', '+359', 'Bulgaria'),
+('BF', '+226', 'Burkina Faso'),
+('BI', '+257', 'Burundi'),
+('CV', '+238', 'Cabo Verde'),
+('KH', '+855', 'Cambodia'),
+('CM', '+237', 'Cameroon'),
+('CA', '+1', 'Canada'),
+('KY', '+1', 'Cayman Islands'),
+('CF', '+236', 'Central African Republic'),
+('TD', '+235', 'Chad'),
+('CL', '+56', 'Chile'),
+('CN', '+86', 'China'),
+('CX', '+61', 'Christmas Island'),
+('CC', '+61', 'Cocos (Keeling) Islands'),
+('CO', '+57', 'Colombia'),
+('KM', '+269', 'Comoros'),
+('CG', '+242', 'Congo'),
+('CD', '+243', 'Congo, Democratic Republic of the'),
+('CK', '+682', 'Cook Islands'),
+('CR', '+506', 'Costa Rica'),
+('CI', '+225', 'Cf4tedIvoire'),
+('HR', '+385', 'Croatia'),
+('CU', '+53', 'Cuba'),
+('CW', '+599', 'Curae7ao'),
+('CY', '+357', 'Cyprus'),
+('CZ', '+420', 'Czech Republic'),
+('DK', '+45', 'Denmark'),
+('DJ', '+253', 'Djibouti'),
+('DM', '+1', 'Dominica'),
+('DO', '+1', 'Dominican Republic'),
+('EC', '+593', 'Ecuador'),
+('EG', '+20', 'Egypt'),
+('SV', '+503', 'El Salvador'),
+('GQ', '+240', 'Equatorial Guinea'),
+('ER', '+291', 'Eritrea'),
+('EE', '+372', 'Estonia'),
+('SZ', '+268', 'Eswatini'),
+('ET', '+251', 'Ethiopia'),
+('FK', '+500', 'Falkland Islands'),
+('FO', '+298', 'Faroe Islands'),
+('FJ', '+679', 'Fiji'),
+('FI', '+358', 'Finland'),
+('FR', '+33', 'France'),
+('GF', '+594', 'French Guiana'),
+('PF', '+689', 'French Polynesia'),
+('TF', '+262', 'French Southern Territories'),
+('GA', '+241', 'Gabon'),
+('GM', '+220', 'Gambia'),
+('GE', '+995', 'Georgia'),
+('DE', '+49', 'Germany'),
+('GH', '+233', 'Ghana'),
+('GI', '+350', 'Gibraltar'),
+('GR', '+30', 'Greece'),
+('GL', '+299', 'Greenland'),
+('GD', '+1', 'Grenada'),
+('GP', '+590', 'Guadeloupe'),
+('GU', '+1', 'Guam'),
+('GT', '+502', 'Guatemala'),
+('GG', '+44', 'Guernsey'),
+('GN', '+224', 'Guinea'),
+('GW', '+245', 'Guinea-Bissau'),
+('GY', '+592', 'Guyana'),
+('HT', '+509', 'Haiti'),
+('HM', '+672', 'Heard Island and McDonald Islands'),
+('VA', '+379', 'Holy See'),
+('HN', '+504', 'Honduras'),
+('HK', '+852', 'Hong Kong'),
+('HU', '+36', 'Hungary'),
+('IS', '+354', 'Iceland'),
+('IN', '+91', 'India'),
+('ID', '+62', 'Indonesia'),
+('IR', '+98', 'Iran'),
+('IQ', '+964', 'Iraq'),
+('IE', '+353', 'Ireland'),
+('IM', '+44', 'Isle of Man'),
+('IL', '+972', 'Israel'),
+('IT', '+39', 'Italy'),
+('JE', '+44', 'Jersey'),
+('JP', '+81', 'Japan'),
+('JO', '+962', 'Jordan'),
+('KZ', '+7', 'Kazakhstan'),
+('KE', '+254', 'Kenya'),
+('KI', '+686', 'Kiribati'),
+('KP', '+850', 'North Korea'),
+('KR', '+82', 'South Korea'),
+('KW', '+965', 'Kuwait'),
+('KG', '+996', 'Kyrgyzstan'),
+('LA', '+856', 'Laos'),
+('LV', '+371', 'Latvia'),
+('LB', '+961', 'Lebanon'),
+('LS', '+266', 'Lesotho'),
+('LR', '+231', 'Liberia'),
+('LY', '+218', 'Libya'),
+('LI', '+423', 'Liechtenstein'),
+('LT', '+370', 'Lithuania'),
+('LU', '+352', 'Luxembourg'),
+('MO', '+853', 'Macao'),
+('MK', '+389', 'North Macedonia'),
+('MG', '+261', 'Madagascar'),
+('MW', '+265', 'Malawi'),
+('MY', '+60', 'Malaysia'),
+('MV', '+960', 'Maldives'),
+('ML', '+223', 'Mali'),
+('MT', '+356', 'Malta'),
+('MH', '+692', 'Marshall Islands'),
+('MQ', '+596', 'Martinique'),
+('MR', '+222', 'Mauritania'),
+('MU', '+230', 'Mauritius'),
+('YT', '+262', 'Mayotte'),
+('MX', '+52', 'Mexico'),
+('FM', '+691', 'Micronesia, Federated States of'),
+('MD', '+373', 'Moldova'),
+('MC', '+377', 'Monaco'),
+('MN', '+976', 'Mongolia'),
+('MM', '+95', 'Myanmar'),
+('ME', '+382', 'Montenegro'),
+('MS', '+1', 'Montserrat'),
+('MA', '+212', 'Morocco'),
+('MZ', '+258', 'Mozambique'),
+('NA', '+264', 'Namibia'),
+('NR', '+674', 'Nauru'),
+('NP', '+977', 'Nepal'),
+('NL', '+31', 'Netherlands'),
+('NC', '+687', 'New Caledonia'),
+('NZ', '+64', 'New Zealand'),
+('NI', '+505', 'Nicaragua'),
+('NE', '+227', 'Niger'),
+('NG', '+234', 'Nigeria'),
+('NU', '+683', 'Niue'),
+('NF', '+672', 'Norfolk Island'),
+('MP', '+1', 'Northern Mariana Islands'),
+('NO', '+47', 'Norway'),
+('OM', '+968', 'Oman'),
+('PK', '+92', 'Pakistan'),
+('PW', '+680', 'Palau'),
+('PS', '+970', 'Palestine'),
+('PA', '+507', 'Panama'),
+('PG', '+675', 'Papua New Guinea'),
+('PY', '+595', 'Paraguay'),
+('PE', '+51', 'Peru'),
+('PH', '+63', 'Philippines'),
+('PN', '+872', 'Pitcairn'),
+('PL', '+48', 'Poland'),
+('PT', '+351', 'Portugal'),
+('PR', '+1', 'Puerto Rico'),
+('QA', '+974', 'Qatar'),
+('RE', '+262', 'Re9union'),
+('RO', '+40', 'Romania'),
+('RU', '+7', 'Russia'),
+('RW', '+250', 'Rwanda'),
+('SH', '+290', 'Saint Helena'),
+('KN', '+1', 'Saint Kitts and Nevis'),
+('LC', '+1', 'Saint Lucia92'),
+('US', '+1', 'United States')
+
+
+INSERT INTO airport (airport_code, airport_name, country) VALUES 
+('JFK', 'John F. Kennedy International Airport', 'US'),
+('LAX', 'Los Angeles International Airport', 'US'),
+('ORD', 'OHare International Airport', 'US'),
+('ATL', 'Hartsfield-Jackson Atlanta International Airport', 'US'),
+('DEN', 'Denver International Airport', 'US'),
+('SFO', 'San Francisco International Airport', 'US'),
+('MCO', 'Orlando International Airport', 'US'),
+('LAS', 'McCarran International Airport', 'US'),
+('BOS', 'Logan International Airport', 'US'),
+('DCA', 'Ronald Reagan Washington National Airport', 'US'),
+('IAH', 'George Bush Intercontinental Airport', 'US'),
+('SAN', 'San Diego International Airport', 'US'),
+('MIA', 'Miami International Airport', 'US'),
+('PHL', 'Philadelphia International Airport', 'US'),
+('SLC', 'Salt Lake City International Airport', 'US');
+
+
+
+INSERT INTO Gender (gender_id, gender) VALUES 
+(1, 'Male'),
+(2, 'Female'),
+(3, 'Other');
+
+
+
+-- Insert flights into the flight table
+INSERT INTO flight (flight_id, departure_airport, departure_date, departure_time, arrival_airport, arrival_date, arrival_time, flight_designator) VALUES
+(1, 'JFK', '2024-09-05', '08:00:00', 'LAX', '2024-09-05', '11:00:00', 'AA100'),
+(2, 'LAX', '2024-09-06', '12:00:00', 'ORD', '2024-09-06', '18:00:00', 'UA200'),
+(3, 'ORD', '2024-09-07', '09:00:00', 'ATL', '2024-09-07', '12:30:00', 'DL300'),
+(4, 'JFK', '2024-09-05', '07:00:00', 'LAX', '2024-09-08', '09:30:00', 'SW400'),
+(5, 'DEN', '2024-09-09', '10:00:00', 'SFO', '2024-09-09', '13:30:00', 'JB500'),
+(6, 'SFO', '2024-09-10', '11:00:00', 'MCO', '2024-09-10', '17:00:00', 'AS600'),
+(7, 'MCO', '2024-09-11', '13:00:00', 'LAS', '2024-09-11', '15:30:00', 'NK700'),
+(8, 'LAS', '2024-09-12', '14:00:00', 'BOS', '2024-09-12', '22:00:00', 'F800'),
+(9, 'BOS', '2024-09-13', '08:00:00', 'DCA', '2024-09-13', '10:30:00', 'AA900'),
+(10, 'DCA', '2024-09-14', '16:00:00', 'IAH', '2024-09-14', '18:30:00', 'UA1010'),
+(11, 'IAH', '2024-09-15', '17:00:00', 'SAN', '2024-09-15', '20:00:00', 'DL1110'),
+(12, 'SAN', '2024-09-16', '09:00:00', 'MIA', '2024-09-16', '15:00:00', 'SW1210'),
+(13, 'MIA', '2024-09-17', '12:00:00', 'PHL', '2024-09-17', '15:30:00', 'JB1310'),
+(14, 'PHL', '2024-09-18', '07:00:00', 'SLC', '2024-09-18', '10:30:00', 'AS1410'),
+(15, 'SLC', '2024-09-19', '11:00:00', 'JFK', '2024-09-19', '17:00:00', 'NK1510'),
+(16, 'JFK', '2024-09-20', '13:00:00', 'LAX', '2024-09-20', '15:30:00', 'F1610'),
+(17, 'LAX', '2024-09-21', '10:00:00', 'ORD', '2024-09-21', '16:00:00', 'AA1710'),
+(18, 'ORD', '2024-09-22', '09:00:00', 'ATL', '2024-09-22', '12:00:00', 'UA1810'),
+(19, 'ATL', '2024-09-23', '14:00:00', 'DEN', '2024-09-23', '16:30:00', 'DL1910'),
+(20, 'DEN', '2024-09-24', '15:00:00', 'SFO', '2024-09-24', '18:30:00', 'SW2010');
+
+
+-- Insert seat availability data into the booking_classes_and_seats table
+INSERT INTO booking_classes_and_seats (flight_id, booking_class, number_of_seats) VALUES
+(1, 'Economy', 150),
+(1, 'Business', 20),
+(1, 'First', 5),
+(2, 'Economy', 180),
+(2, 'Business', 25),
+(2, 'First', 7),
+(3, 'Economy', 200),
+(3, 'Business', 30),
+(3, 'First', 10),
+(4, 'Economy', 170),
+(4, 'Business', 22),
+(4, 'First', 8),
+(5, 'Economy', 160),
+(5, 'Business', 18),
+(5, 'First', 6),
+(6, 'Economy', 190),
+(6, 'Business', 20),
+(6, 'First', 7),
+(7, 'Economy', 180),
+(7, 'Business', 15),
+(7, 'First', 5),
+(8, 'Economy', 200),
+(8, 'Business', 25),
+(8, 'First', 10),
+(9, 'Economy', 170),
+(9, 'Business', 20),
+(9, 'First', 7),
+(10, 'Economy', 150),
+(10, 'Business', 22),
+(10, 'First', 6),
+(11, 'Economy', 160),
+(11, 'Business', 18),
+(11, 'First', 5),
+(12, 'Economy', 180),
+(12, 'Business', 20),
+(12, 'First', 8),
+(13, 'Economy', 200),
+(13, 'Business', 25),
+(13, 'First', 10),
+(14, 'Economy', 170),
+(14, 'Business', 20),
+(14, 'First', 6),
+(15, 'Economy', 180),
+(15, 'Business', 22),
+(15, 'First', 7),
+(16, 'Economy', 190),
+(16, 'Business', 18),
+(16, 'First', 5),
+(17, 'Economy', 200),
+(17, 'Business', 25),
+(17, 'First', 8),
+(18, 'Economy', 150),
+(18, 'Business', 20),
+(18, 'First', 7),
+(19, 'Economy', 160),
+(19, 'Business', 18),
+(19, 'First', 6),
+(20, 'Economy', 170),
+(20, 'Business', 22),
+(20, 'First', 7);
+
