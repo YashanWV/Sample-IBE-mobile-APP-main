@@ -16,19 +16,23 @@ import java.util.Map;
 @AllArgsConstructor
 @Component
 @Entity
-public class Flight {
+public class Booking {
 
     @Id
     @Column(nullable = false)
-    private int flightId;
+    private int bookingId;
 
 //    private String departureAirportCode;
 //
 //    private String departureAirportName;
 
-    @ManyToOne
-    @JoinColumn(name = "departureAirport", nullable = false, referencedColumnName = "airportCode", foreignKey = @ForeignKey(name = "FK_DEPARTURE_AIRPORT"))
-    private Airport departureAirport;
+    @Column
+    private String departureAirport;
+
+    @Column
+    private String arrivalAirport;
+
+
 
     @Column(columnDefinition = "DATE")
     private LocalDate departureDate;
@@ -40,9 +44,11 @@ public class Flight {
 //
 //    private String arrivalAirportName;
 
-    @ManyToOne
-    @JoinColumn(name = "arrivalAirport", nullable = false, referencedColumnName = "airportCode", foreignKey = @ForeignKey(name = "FK_ARRIVAL_AIRPORT"))
-    private Airport arrivalAirport;
+    @Column
+    private String departureCountry;
+
+    @Column
+    private String arrivalCountry;
 
     @Column(columnDefinition = "DATE")
     private LocalDate arrivalDate;
@@ -65,9 +71,12 @@ public class Flight {
 //    @Column(nullable = false)
 //    private int numberOfSeats;
 
-    @ElementCollection
-    @CollectionTable(name = "booking_classes_and_seats", joinColumns = @JoinColumn(name = "flight_id"))
-    @MapKeyColumn(name = "booking_class")
-    @Column(name = "number_of_seats")
-    private Map<String, Integer> seatAvailability;
+    @Column
+    private String bookingClass;
+
+    @Column
+    private int numberOfSeats;
+
+    @Column
+    private String username;
 }

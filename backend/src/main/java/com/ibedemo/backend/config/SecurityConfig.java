@@ -32,7 +32,7 @@ public class SecurityConfig {
             "/api/v1/loginUser",
             "api/v1/registerUser",
                                 "api/v1/availableFlights",
-            "api/v1/getUser",
+//            "api/v1/getUser",
             "api/v1/getAirports",
             "api/v1/getGenders",
             "api/v1/getCountries",
