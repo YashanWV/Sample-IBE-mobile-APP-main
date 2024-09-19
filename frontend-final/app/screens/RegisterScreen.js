@@ -97,7 +97,7 @@ const StatusBarHeight = getStatusBarHeight();
 //   { label: "Jordan", value: 18 },
 // ];
 
-function RegiterScreen({ navigation }) {
+function RegiterScreen({ route, navigation }) {
   // const [keyboardVisible, setKeyboardVisible] = useState(false);
 
   // useEffect(() => {
@@ -170,6 +170,8 @@ function RegiterScreen({ navigation }) {
     setGenders(response.data.Genders);
     console.log(response.data.Genders);
   };
+
+
 
   const auth = useAuth();
   const [loginFailed, setLoginFailed] = useState(false);

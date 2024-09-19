@@ -40,6 +40,8 @@ import { ListItemSeperator } from "../components/lists";
 import { UserContext } from "../config/UserContext";
 import bookings from "../apis/bookings";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import registration from "../apis/registration";
+import masterData from "../apis/masterData";
 
 const StatusBarHeight = getStatusBarHeight();
 
@@ -137,7 +139,7 @@ function HomeScreen2({ route, navigation }) {
 
   const firstName = userDetails
     ? userDetails.fullName.split(" ")[0].charAt(0).toUpperCase() +
-      userDetails.fullName.split(" ")[0].slice(1).toLowerCase()
+    userDetails.fullName.split(" ")[0].slice(1).toLowerCase()
     : null;
 
   const auth = useAuth();
@@ -193,6 +195,27 @@ function HomeScreen2({ route, navigation }) {
       navigation.setParams({ userDetails });
     }
   }, [userDetails]);
+
+  // const [countries, setCountries] = useState([]);
+  // const [nationalities, setNationalities] = useState([]);
+  // const [genders, setGenders] = useState([]);
+
+  // useEffect(() => {
+  //   loadMasterData();
+  // }, []);
+
+  // const loadMasterData = async () => {
+  //   const response = await masterData.getMasterData("registration");
+
+  //   setCountries(response.data.Countries);
+  //   console.log(response.data.Countries);
+
+  //   setNationalities(response.data.Nationalities);
+  //   console.log(response.data.Nationalities);
+
+  //   setGenders(response.data.Genders);
+  //   console.log(response.data.Genders);
+  // };
 
   return (
     <>
@@ -282,8 +305,7 @@ function HomeScreen2({ route, navigation }) {
               textColor={colors.tertiary}
               borderWidth={1}
               borderColor={colors.tertiary}
-              marginTop={80}
-              marginBottom={20}
+              marginTop={20}
               width={200}
               style={{ marginLeft: 26 }}
             />
@@ -414,7 +436,9 @@ function HomeScreen2({ route, navigation }) {
             <AppButton
               title={"REGISTER"}
               onPress={() => {
+
                 navigation.navigate("RegisterScreen");
+
                 setShowLoginCard(false);
               }}
               color="tertiary"

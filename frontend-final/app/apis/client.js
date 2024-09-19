@@ -4,7 +4,7 @@ import authStorage from "../auth/storage";
 const securedEndpoints = ["/getUser", "getBookings"];
 
 const apiClient = create({
-  baseURL: "http://192.168.1.24:8090/api/v1",
+  baseURL: "http://192.168.100.188:8090/api/v1",
 });
 
 apiClient.addAsyncRequestTransform(async (request) => {

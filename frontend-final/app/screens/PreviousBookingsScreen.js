@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { View, StyleSheet, Text } from "react-native";
 
 import colors from "../config/colors";
@@ -14,13 +15,17 @@ import ListItemSeperatorVertical from "../components/lists/ListItemSeperatorVert
 import { ListItemSeperator } from "../components/lists";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import useAuth from "../auth/useAuth";
+import { useContext } from "react";
+import { UserContext } from "../config/UserContext";
 
 function PreviousBookingsScreen({ route }) {
   const { params } = route.params;
+  const { userDetails, setUserDetails } = useContext(UserContext);
 
   return (
     <AppBackgroundScrollable style={{ paddingTop: 20 }}>
-      {params ? (
+      {userDetails ? (params && params.length > 0 ? (
         params.map((flight, index) => (
           <DetailsCard
             key={index}
@@ -185,7 +190,17 @@ function PreviousBookingsScreen({ route }) {
             </View>
           </DetailsCard>
         ))
-      ) : (
+      ) : <Text
+        style={{
+          fontSize: 20,
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center",
+          color: colors.tertiary,
+        }}
+      >
+        No previous bookings!
+      </Text>) : (
         <Text
           style={{
             fontSize: 20,
@@ -198,6 +213,7 @@ function PreviousBookingsScreen({ route }) {
           You have to logged in for see the previous booking details!
         </Text>
       )}
+
     </AppBackgroundScrollable>
   );
 }

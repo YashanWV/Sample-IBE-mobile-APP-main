@@ -54,7 +54,8 @@ function AvailableFlightsScreen({ route }) {
   const loadAvailableFlights = async () => {
     console.log(params);
     const response = await flightSearch.getAvailableFlights(params);
-    setAvailableFlights(response.data);
+    { response.data.length !== 0 ? setAvailableFlights(response.data) : setAvailableFlights(null) }
+
     // if (availableFlights.length === 0) setAvailableFlights(null);
   };
 
@@ -64,7 +65,7 @@ function AvailableFlightsScreen({ route }) {
 
   return (
     <AppBackgroundScrollable style={{ paddingTop: 20 }}>
-      {availableFlights.length !== 0 ? (
+      {availableFlights ? (
         availableFlights.map((flight, index) => (
           <DetailsCard
             key={index}

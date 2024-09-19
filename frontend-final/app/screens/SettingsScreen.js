@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect, useContext } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import useAuth from "../auth/useAuth";
 import authApi from "../apis/login";
 import login from "../apis/login";
@@ -13,6 +13,7 @@ import { AppText } from "../components";
 import { ListItemSeperator } from "../components/lists";
 import { AppButton } from "../components/buttons";
 import { UserContext } from "../config/UserContext";
+
 
 function SettingsScreen({ navigation }) {
   const { userDetails, setUserDetails } = useContext(UserContext);
@@ -87,7 +88,7 @@ function SettingsScreen({ navigation }) {
         </AppText>
       </View>
       {/* <ListItemSeperator /> */}
-      <View
+      <ScrollView
         style={{
           width: "100%",
           backgroundColor: colors.white,
@@ -207,7 +208,7 @@ function SettingsScreen({ navigation }) {
             </View>
           </>
         ) : null}
-      </View>
+      </ScrollView>
       <View
         style={{
           width: "100%",
@@ -234,24 +235,24 @@ function SettingsScreen({ navigation }) {
             marginBottom={10}
           />
         ) : // <>
-        //   <ListItemSeperator color={colors.formalerts} />
-        //   <View
-        //     style={{
-        //       width: "100%",
-        //       backgroundColor: colors.listseperators,
-        //       height: 30,
+          //   <ListItemSeperator color={colors.formalerts} />
+          //   <View
+          //     style={{
+          //       width: "100%",
+          //       backgroundColor: colors.listseperators,
+          //       height: 30,
 
-        //       elevation: 3,
+          //       elevation: 3,
 
-        //       marginBottom: 15,
+          //       marginBottom: 15,
 
-        //       //paddingTop: 5,
-        //       borderBottomStartRadius: 20,
-        //       borderBottomEndRadius: 20,
-        //     }}
-        //   />
-        // </>
-        null}
+          //       //paddingTop: 5,
+          //       borderBottomStartRadius: 20,
+          //       borderBottomEndRadius: 20,
+          //     }}
+          //   />
+          // </>
+          null}
       </View>
     </AppBackgroundScrollable>
   );
